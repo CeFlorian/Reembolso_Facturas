@@ -1,0 +1,785 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{60ECF48F-6096-4CA1-9549-7ACD16A7AABB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>webFacturas</RootNamespace>
+    <AssemblyName>webFacturas</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44365</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.bootstrap">
+      <HintPath>packages\AspNet.ScriptManager.bootstrap.3.4.1\lib\net45\AspNet.ScriptManager.bootstrap.dll</HintPath>
+    </Reference>
+    <Reference Include="AspNet.ScriptManager.jQuery">
+      <HintPath>packages\AspNet.ScriptManager.jQuery.3.3.1\lib\net45\AspNet.ScriptManager.jQuery.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.MSAjax">
+      <HintPath>packages\Microsoft.AspNet.ScriptManager.MSAjax.5.0.0\lib\net45\Microsoft.ScriptManager.MSAjax.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ScriptManager.WebForms">
+      <HintPath>packages\Microsoft.AspNet.ScriptManager.WebForms.5.0.0\lib\net45\Microsoft.ScriptManager.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Web.Optimization.WebForms">
+      <Private>True</Private>
+      <HintPath>packages\Microsoft.AspNet.Web.Optimization.WebForms.1.1.3\lib\net45\Microsoft.AspNet.Web.Optimization.WebForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.FriendlyUrls">
+      <HintPath>packages\Microsoft.AspNet.FriendlyUrls.Core.1.0.2\lib\net45\Microsoft.AspNet.FriendlyUrls.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Admin\DetalleSolicitud.aspx" />
+    <Content Include="Admin\frmAgregarProyecto.aspx" />
+    <Content Include="Admin\frmAgregarUsuario.aspx" />
+    <Content Include="Admin\ListaProyecto.aspx" />
+    <Content Include="Admin\ListaSolicitudes.aspx" />
+    <Content Include="Admin\ListaUsuarios.aspx" />
+    <Content Include="Contents\css\ErrorPage.css" />
+    <Content Include="Contents\css\materialize.css" />
+    <Content Include="Contents\css\style.css" />
+    <Content Include="Contents\css\style.min.css" />
+    <Content Include="Contents\css\themes\theme-blue.css" />
+    <Content Include="Contents\css\themes\theme-blue.min.css" />
+    <Content Include="Contents\css\themes\theme-cyan.css" />
+    <Content Include="Contents\css\themes\theme-cyan.min.css" />
+    <Content Include="Contents\favicon.ico" />
+    <Content Include="Contents\images\18.jpg" />
+    <Content Include="Contents\images\logo.png" />
+    <Content Include="Contents\images\user-img-background.jpg" />
+    <Content Include="Contents\images\user.png" />
+    <Content Include="Contents\js\admin.js" />
+    <Content Include="Contents\js\demo.js" />
+    <Content Include="Contents\js\helpers.js" />
+    <Content Include="Contents\js\pages\cards\basic.js" />
+    <Content Include="Contents\js\pages\cards\colored.js" />
+    <Content Include="Contents\js\pages\charts\chartjs.js" />
+    <Content Include="Contents\js\pages\charts\flot.js" />
+    <Content Include="Contents\js\pages\charts\jquery-knob.js" />
+    <Content Include="Contents\js\pages\charts\morris.js" />
+    <Content Include="Contents\js\pages\charts\sparkline.js" />
+    <Content Include="Contents\js\pages\examples\forgot-password.js" />
+    <Content Include="Contents\js\pages\examples\profile.js" />
+    <Content Include="Contents\js\pages\examples\sign-in.js" />
+    <Content Include="Contents\js\pages\examples\sign-up.js" />
+    <Content Include="Contents\js\pages\forms\advanced-form-elements.js" />
+    <Content Include="Contents\js\pages\forms\basic-form-elements.js" />
+    <Content Include="Contents\js\pages\forms\editors.js" />
+    <Content Include="Contents\js\pages\forms\form-validation.js" />
+    <Content Include="Contents\js\pages\forms\form-wizard.js" />
+    <Content Include="Contents\js\pages\index.js" />
+    <Content Include="Contents\js\pages\maps\google.js" />
+    <Content Include="Contents\js\pages\maps\jvectormap.js" />
+    <Content Include="Contents\js\pages\medias\image-gallery.js" />
+    <Content Include="Contents\js\pages\tables\editable-table.js" />
+    <Content Include="Contents\js\pages\tables\jquery-datatable.js" />
+    <Content Include="Contents\js\pages\ui\animations.js" />
+    <Content Include="Contents\js\pages\ui\dialogs.js" />
+    <Content Include="Contents\js\pages\ui\modals.js" />
+    <Content Include="Contents\js\pages\ui\notifications.js" />
+    <Content Include="Contents\js\pages\ui\range-sliders.js" />
+    <Content Include="Contents\js\pages\ui\sortable-nestable.js" />
+    <Content Include="Contents\js\pages\ui\tooltips-popovers.js" />
+    <Content Include="Contents\js\pages\widgets\infobox\infobox-1.js" />
+    <Content Include="Contents\js\pages\widgets\infobox\infobox-2.js" />
+    <Content Include="Contents\js\pages\widgets\infobox\infobox-3.js" />
+    <Content Include="Contents\js\pages\widgets\infobox\infobox-4.js" />
+    <Content Include="Contents\js\pages\widgets\infobox\infobox-5.js" />
+    <Content Include="Contents\js\script.js" />
+    <Content Include="Contents\Login\Login.css" />
+    <Content Include="Contents\Login\Site.css" />
+    <Content Include="Contents\Login\style.css" />
+    <Content Include="Contents\plugins\animate-css\animate.css" />
+    <Content Include="Contents\plugins\animate-css\animate.min.css" />
+    <Content Include="Contents\plugins\autosize\autosize.js" />
+    <Content Include="Contents\plugins\autosize\autosize.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\css\bootstrap-datepicker.css" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\css\bootstrap-datepicker.css.map" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\css\bootstrap-datepicker.min.css" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\css\bootstrap-datepicker.standalone.css" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\css\bootstrap-datepicker.standalone.css.map" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\css\bootstrap-datepicker.standalone.min.css" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.css" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.css.map" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.min.css" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.css" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.css.map" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\css\bootstrap-datepicker3.standalone.min.css" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\js\bootstrap-datepicker.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker-en-CA.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ar-tn.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ar.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.az.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.bg.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.bn.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.br.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.bs.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ca.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.cs.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.cy.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.da.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.de.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.el.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.en-AU.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.en-CA.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.en-GB.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.en-IE.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.en-NZ.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.en-ZA.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.eo.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.es.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.es.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.et.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.eu.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.fa.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.fi.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.fo.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.fr-CH.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.fr.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.gl.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.he.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.hi.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.hr.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.hu.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.hy.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.id.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.is.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.it-CH.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.it.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ja.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ka.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.kh.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.kk.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.km.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ko.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.kr.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.lt.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.lv.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.me.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.mk.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.mn.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ms.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.nl-BE.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.nl.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.no.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.oc.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.pl.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.pt-BR.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.pt.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ro.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.rs-latin.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.rs.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ru.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.si.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.sk.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.sl.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.sq.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.sr-latin.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.sr.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.sv.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.sw.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.ta.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.tg.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.th.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.tk.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.tr.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.uk.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.uz-cyrl.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.uz-latn.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.vi.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.zh-CN.min.js" />
+    <Content Include="Contents\plugins\bootstrap-datepicker\locales\bootstrap-datepicker.zh-TW.min.js" />
+    <Content Include="Contents\plugins\bootstrap-material-datetimepicker\css\bootstrap-material-datetimepicker.css" />
+    <Content Include="Contents\plugins\bootstrap-material-datetimepicker\font\Material-Design-Icons.svg" />
+    <Content Include="Contents\plugins\bootstrap-material-datetimepicker\js\bootstrap-material-datetimepicker.js" />
+    <Content Include="Contents\plugins\bootstrap-select\css\bootstrap-select.css" />
+    <Content Include="Contents\plugins\bootstrap-select\css\bootstrap-select.css.map" />
+    <Content Include="Contents\plugins\bootstrap-select\css\bootstrap-select.min.css" />
+    <Content Include="Contents\plugins\bootstrap-select\js\bootstrap-select.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\bootstrap-select.js.map" />
+    <Content Include="Contents\plugins\bootstrap-select\js\bootstrap-select.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-ar_AR.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-ar_AR.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-bg_BG.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-bg_BG.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-cro_CRO.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-cro_CRO.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-cs_CZ.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-cs_CZ.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-da_DK.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-da_DK.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-de_DE.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-de_DE.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-en_US.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-en_US.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-es_CL.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-es_CL.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-eu.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-eu.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-fa_IR.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-fa_IR.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-fi_FI.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-fi_FI.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-fr_FR.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-fr_FR.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-hu_HU.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-hu_HU.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-id_ID.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-id_ID.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-it_IT.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-it_IT.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-ko_KR.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-ko_KR.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-lt_LT.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-lt_LT.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-nb_NO.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-nb_NO.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-nl_NL.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-nl_NL.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-pl_PL.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-pl_PL.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-pt_BR.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-pt_BR.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-pt_PT.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-pt_PT.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-ro_RO.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-ro_RO.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-ru_RU.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-ru_RU.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-sk_SK.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-sk_SK.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-sl_SI.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-sl_SI.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-sv_SE.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-sv_SE.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-tr_TR.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-tr_TR.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-ua_UA.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-ua_UA.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-zh_CN.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-zh_CN.min.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-zh_TW.js" />
+    <Content Include="Contents\plugins\bootstrap-select\js\i18n\defaults-zh_TW.min.js" />
+    <Content Include="Contents\plugins\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Contents\plugins\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Contents\plugins\bootstrap\css\bootstrap.css" />
+    <Content Include="Contents\plugins\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Contents\plugins\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Contents\plugins\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Contents\plugins\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Contents\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Contents\plugins\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Contents\plugins\bootstrap\js\bootstrap.js" />
+    <Content Include="Contents\plugins\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Contents\plugins\bootstrap\js\npm.js" />
+    <Content Include="Contents\plugins\font-awesome\css\font-awesome.css" />
+    <Content Include="Contents\plugins\font-awesome\css\font-awesome.css.map" />
+    <Content Include="Contents\plugins\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Contents\plugins\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Contents\plugins\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Contents\plugins\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Contents\plugins\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Contents\plugins\font-awesome\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Contents\plugins\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Contents\plugins\jquery-knob\jquery.knob.min.js" />
+    <Content Include="Contents\plugins\jquery-slimscroll\jquery.slimscroll.js" />
+    <Content Include="Contents\plugins\jquery-steps\jquery.steps.css" />
+    <Content Include="Contents\plugins\jquery-steps\jquery.steps.js" />
+    <Content Include="Contents\plugins\jquery-steps\jquery.steps.min.js" />
+    <Content Include="Contents\plugins\jquery-validation\additional-methods.js" />
+    <Content Include="Contents\plugins\jquery-validation\jquery.validate.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_ar.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_az" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_bg.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_bn_BD.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_ca.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_cs.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_da.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_de.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_el.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_es.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_es_AR.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_es_PE.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_et.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_eu.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_fa.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_fi.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_fr.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_ge.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_gl.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_he.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_hr.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_hu.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_hy_AM.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_id.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_is.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_it.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_ja.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_ka.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_kk.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_ko.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_lt.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_lv.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_mk.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_my.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_nl.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_no.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_pl.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_pt_BR.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_pt_PT.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_ro.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_ru.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_si.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_sk.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_sl.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_sr.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_sr_lat.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_sv.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_th.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_tj.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_tr.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_uk.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_vi.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_zh.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\messages_zh_TW.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\methods_de.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\methods_es_CL.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\methods_fi.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\methods_nl.js" />
+    <Content Include="Contents\plugins\jquery-validation\localization\methods_pt.js" />
+    <Content Include="Contents\plugins\jquery\jquery.js" />
+    <Content Include="Contents\plugins\jquery\jquery.min.js" />
+    <Content Include="Contents\plugins\jquery\jquery.min.map" />
+    <Content Include="Contents\plugins\material-design-iconic-font\css\material-design-iconic-font.css" />
+    <Content Include="Contents\plugins\material-design-iconic-font\css\material-design-iconic-font.min.css" />
+    <Content Include="Contents\plugins\material-design-iconic-font\fonts\Material-Design-Iconic-Font.eot" />
+    <Content Include="Contents\plugins\material-design-iconic-font\fonts\Material-Design-Iconic-Font.svg" />
+    <Content Include="Contents\plugins\material-design-iconic-font\fonts\Material-Design-Iconic-Font.ttf" />
+    <Content Include="Contents\plugins\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff" />
+    <Content Include="Contents\plugins\material-design-iconic-font\fonts\Material-Design-Iconic-Font.woff2" />
+    <Content Include="Contents\plugins\materialize-css\css\materialize.css" />
+    <Content Include="Contents\plugins\materialize-css\css\materialize.min.css" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Bold.eot" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Bold.ttf" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Bold.woff" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Bold.woff2" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Light.eot" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Light.ttf" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Light.woff" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Light.woff2" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Medium.eot" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Medium.ttf" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Medium.woff" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Medium.woff2" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Regular.eot" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Regular.ttf" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Regular.woff" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Regular.woff2" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Thin.eot" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Thin.ttf" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Thin.woff" />
+    <Content Include="Contents\plugins\materialize-css\fonts\roboto\Roboto-Thin.woff2" />
+    <Content Include="Contents\plugins\materialize-css\js\materialize.js" />
+    <Content Include="Contents\plugins\materialize-css\js\materialize.min.js" />
+    <Content Include="Contents\plugins\momentjs\ender.js" />
+    <Content Include="Contents\plugins\momentjs\moment.js" />
+    <Content Include="Contents\plugins\momentjs\package.js" />
+    <Content Include="Contents\plugins\node-waves\waves.css" />
+    <Content Include="Contents\plugins\node-waves\waves.js" />
+    <Content Include="Contents\plugins\node-waves\waves.min.css" />
+    <Content Include="Contents\plugins\node-waves\waves.min.js" />
+    <Content Include="Contents\plugins\node-waves\waves.min.js.map" />
+    <Content Include="Contents\plugins\sweetalert\sweetalert-dev.js" />
+    <Content Include="Contents\plugins\sweetalert\sweetalert.css" />
+    <Content Include="Contents\plugins\sweetalert\sweetalert.min.js" />
+    <Content Include="Emp\GenerarSolicitud.aspx" />
+    <Content Include="Emp\Solicitudes.aspx" />
+    <Content Include="ErrorPage.aspx" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Contents\scss\browser-support\_ie10.scss" />
+    <Content Include="Contents\scss\browser-support\_ie11.scss" />
+    <Content Include="Contents\scss\pages\_404.scss" />
+    <Content Include="Contents\scss\pages\_500.scss" />
+    <Content Include="Contents\scss\pages\_forgotpasswordpage.scss" />
+    <Content Include="Contents\scss\pages\_loginpage.scss" />
+    <Content Include="Contents\scss\pages\_profile.scss" />
+    <Content Include="Contents\scss\pages\_signuppage.scss" />
+    <Content Include="Contents\scss\style.scss" />
+    <Content Include="Contents\scss\themes\theme-amber.scss" />
+    <Content Include="Contents\scss\themes\theme-black.scss" />
+    <Content Include="Contents\scss\themes\theme-blue-grey.scss" />
+    <Content Include="Contents\scss\themes\theme-blue.scss" />
+    <Content Include="Contents\scss\themes\theme-brown.scss" />
+    <Content Include="Contents\scss\themes\theme-cyan.scss" />
+    <Content Include="Contents\scss\themes\theme-deep-orange.scss" />
+    <Content Include="Contents\scss\themes\theme-deep-purple.scss" />
+    <Content Include="Contents\scss\themes\theme-green.scss" />
+    <Content Include="Contents\scss\themes\theme-grey.scss" />
+    <Content Include="Contents\scss\themes\theme-indigo.scss" />
+    <Content Include="Contents\scss\themes\theme-light-blue.scss" />
+    <Content Include="Contents\scss\themes\theme-light-green.scss" />
+    <Content Include="Contents\scss\themes\theme-lime.scss" />
+    <Content Include="Contents\scss\themes\theme-orange.scss" />
+    <Content Include="Contents\scss\themes\theme-pink.scss" />
+    <Content Include="Contents\scss\themes\theme-purple.scss" />
+    <Content Include="Contents\scss\themes\theme-red.scss" />
+    <Content Include="Contents\scss\themes\theme-teal.scss" />
+    <Content Include="Contents\scss\themes\theme-yellow.scss" />
+    <Content Include="Contents\scss\themes\_all-themes.scss" />
+    <Content Include="Contents\scss\themes\_theme-color-variables.scss" />
+    <Content Include="Contents\scss\_alerts.scss" />
+    <Content Include="Contents\scss\_badgelistgroupitem.scss" />
+    <Content Include="Contents\scss\_bootstrapnotify.scss" />
+    <Content Include="Contents\scss\_bootstrapselect.scss" />
+    <Content Include="Contents\scss\_breadcrumbs.scss" />
+    <Content Include="Contents\scss\_buttons.scss" />
+    <Content Include="Contents\scss\_card.scss" />
+    <Content Include="Contents\scss\_charts.scss" />
+    <Content Include="Contents\scss\_checkboxradio.scss" />
+    <Content Include="Contents\scss\_collapse.scss" />
+    <Content Include="Contents\scss\_colorpicker.scss" />
+    <Content Include="Contents\scss\_customanimate.scss" />
+    <Content Include="Contents\scss\_dashboard.scss" />
+    <Content Include="Contents\scss\_datetimepicker.scss" />
+    <Content Include="Contents\scss\_demo.scss" />
+    <Content Include="Contents\scss\_dialogs.scss" />
+    <Content Include="Contents\scss\_dropdownmenu.scss" />
+    <Content Include="Contents\scss\_dropzone.scss" />
+    <Content Include="Contents\scss\_formwizard.scss" />
+    <Content Include="Contents\scss\_general.scss" />
+    <Content Include="Contents\scss\_helpers.scss" />
+    <Content Include="Contents\scss\_infobox.scss" />
+    <Content Include="Contents\scss\_inputformgroup.scss" />
+    <Content Include="Contents\scss\_ionrangeslider.scss" />
+    <Content Include="Contents\scss\_jquerydatatable.scss" />
+    <Content Include="Contents\scss\_jquerynestable.scss" />
+    <Content Include="Contents\scss\_labels.scss" />
+    <Content Include="Contents\scss\_leftsidebaroverlay.scss" />
+    <Content Include="Contents\scss\_lightgallery.scss" />
+    <Content Include="Contents\scss\_maps.scss" />
+    <Content Include="Contents\scss\_materialicons.scss" />
+    <Content Include="Contents\scss\_media.scss" />
+    <Content Include="Contents\scss\_mediaobject.scss" />
+    <Content Include="Contents\scss\_mixins.scss" />
+    <Content Include="Contents\scss\_modals.scss" />
+    <Content Include="Contents\scss\_multiselect.scss" />
+    <Content Include="Contents\scss\_navbar.scss" />
+    <Content Include="Contents\scss\_navtabs.scss" />
+    <Content Include="Contents\scss\_noUISlider.scss" />
+    <Content Include="Contents\scss\_pageloader.scss" />
+    <Content Include="Contents\scss\_pagination.scss" />
+    <Content Include="Contents\scss\_panels.scss" />
+    <Content Include="Contents\scss\_preloaders.scss" />
+    <Content Include="Contents\scss\_progressbars.scss" />
+    <Content Include="Contents\scss\_searchbar.scss" />
+    <Content Include="Contents\scss\_switch.scss" />
+    <Content Include="Contents\scss\_tables.scss" />
+    <Content Include="Contents\scss\_tagsinput.scss" />
+    <Content Include="Contents\scss\_thumbnails.scss" />
+    <Content Include="Contents\scss\_tooltippopovers.scss" />
+    <Content Include="Contents\scss\_variables.scss" />
+    <Content Include="Contents\scss\_waveseffect.scss" />
+    <Content Include="Contents\plugins\bootstrap-material-datetimepicker\font\Material-Design-Icons.eot" />
+    <Content Include="Contents\plugins\bootstrap-material-datetimepicker\font\Material-Design-Icons.ttf" />
+    <Content Include="Contents\plugins\bootstrap-material-datetimepicker\font\Material-Design-Icons.woff" />
+    <Content Include="Contents\plugins\bootstrap-material-datetimepicker\font\Material-Design-Icons.woff2" />
+    <None Include="Properties\PublishProfiles\FacturacionWeb - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\facturasfusa - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\facturasfusa - ReadOnly - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\facturasfusa - Web Deploy.pubxml" />
+    <Content Include="Inicio.aspx" />
+    <Content Include="login.aspx" />
+    <Content Include="salir.aspx" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <None Include="Site.Master" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\WebForms\DetailsView.js" />
+    <Content Include="Scripts\WebForms\Focus.js" />
+    <Content Include="Scripts\WebForms\GridView.js" />
+    <Content Include="Scripts\WebForms\Menu.js" />
+    <Content Include="Scripts\WebForms\MenuStandards.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjax.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxApplicationServices.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxComponentModel.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxCore.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxGlobalization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxHistory.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxNetwork.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxSerialization.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxTimer.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebForms.js" />
+    <Content Include="Scripts\WebForms\MSAjax\MicrosoftAjaxWebServices.js" />
+    <Content Include="Scripts\WebForms\SmartNav.js" />
+    <Content Include="Scripts\WebForms\TreeView.js" />
+    <Content Include="Scripts\WebForms\WebForms.js" />
+    <Content Include="Scripts\WebForms\WebParts.js" />
+    <Content Include="Scripts\WebForms\WebUIValidation.js" />
+    <Content Include="ViewSwitcher.ascx" />
+    <Content Include="Web.config" />
+    <Content Include="Bundle.config" />
+    <Content Include="Site.Mobile.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Admin\DetalleSolicitud.aspx.cs">
+      <DependentUpon>DetalleSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\DetalleSolicitud.aspx.designer.cs">
+      <DependentUpon>DetalleSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmAgregarProyecto.aspx.cs">
+      <DependentUpon>frmAgregarProyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\frmAgregarProyecto.aspx.designer.cs">
+      <DependentUpon>frmAgregarProyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\frmAgregarUsuario.aspx.cs">
+      <DependentUpon>frmAgregarUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\frmAgregarUsuario.aspx.designer.cs">
+      <DependentUpon>frmAgregarUsuario.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ListaProyecto.aspx.cs">
+      <DependentUpon>ListaProyecto.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListaProyecto.aspx.designer.cs">
+      <DependentUpon>ListaProyecto.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ListaSolicitudes.aspx.cs">
+      <DependentUpon>ListaSolicitudes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListaSolicitudes.aspx.designer.cs">
+      <DependentUpon>ListaSolicitudes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\ListaUsuarios.aspx.cs">
+      <DependentUpon>ListaUsuarios.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Admin\ListaUsuarios.aspx.designer.cs">
+      <DependentUpon>ListaUsuarios.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Emp\GenerarSolicitud.aspx.cs">
+      <DependentUpon>GenerarSolicitud.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emp\GenerarSolicitud.aspx.designer.cs">
+      <DependentUpon>GenerarSolicitud.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Emp\Solicitudes.aspx.cs">
+      <DependentUpon>Solicitudes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Emp\Solicitudes.aspx.designer.cs">
+      <DependentUpon>Solicitudes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ErrorPage.aspx.designer.cs">
+      <DependentUpon>ErrorPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Inicio.aspx.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inicio.aspx.designer.cs">
+      <DependentUpon>Inicio.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logica\AccesoDatos\clsAccesoDatos.cs" />
+    <Compile Include="Logica\Negocios\clsAdministrador.cs" />
+    <Compile Include="Logica\Negocios\clsEmpleado.cs" />
+    <Compile Include="Logica\Negocios\clsSistema.cs" />
+    <Compile Include="Logica\Objetos\clsResultadoOperacion.cs" />
+    <Compile Include="Logica\Objetos\clsSolicitudFactura.cs" />
+    <Compile Include="Logica\Objetos\clsUsuario.cs" />
+    <Compile Include="Logica\Objetos\Utilidades.cs" />
+    <Compile Include="login.aspx.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login.aspx.designer.cs">
+      <DependentUpon>login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="salir.aspx.cs">
+      <DependentUpon>salir.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="salir.aspx.designer.cs">
+      <DependentUpon>salir.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Master.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Master.designer.cs">
+      <DependentUpon>Site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site.Mobile.Master.designer.cs">
+      <DependentUpon>Site.Mobile.Master</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ViewSwitcher.ascx.designer.cs">
+      <DependentUpon>ViewSwitcher.ascx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="log\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49907</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44365/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
